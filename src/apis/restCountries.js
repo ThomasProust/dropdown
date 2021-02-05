@@ -5,11 +5,8 @@ const countriesApi = axios.create({
 });
 
 export const getCountries = async () => {
-    const { data } = await countriesApi.get('/');
-    return data.map((c) => ({
-        key: c.alpha2Code.toLowerCase(),
-        value: c.alpha2Code.toLowerCase(),
-        image: { className: 'flag', src: c.flag },
-        text: c.name,
-    }));
+    const { data } = await countriesApi.get('/', {
+        params: { fields: 'name;flag;alpha2Code' },
+    });
+    return data;
 };

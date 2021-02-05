@@ -1,6 +1,5 @@
-import './App.css';
 import { Container } from 'semantic-ui-react';
-import MyDropdown from './components/Dropdown';
+import MyDropdown from './components/dropdown/Dropdown';
 
 const App = () => {
     return (
