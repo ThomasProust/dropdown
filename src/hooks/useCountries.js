@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getCountriesAction } from '../actions';
 
 const useCountries = () => {
-    const countries = useSelector((state) => state.countries.countries);
+    const countries = useSelector((state) => state.countries);
     const dispatch = useDispatch();
 
     useEffect(() => {

@@ -1,8 +1,6 @@
 import { GET_COUNTRIES } from '../actions/types';
 
-const countriesReducer = (state = { countries: [] }, action) => {
-    let { countries } = state;
-
+const countriesReducer = (countries = [], action) => {
     switch (action.type) {
         case GET_COUNTRIES:
             countries = action.payload;
@@ -11,7 +9,7 @@ const countriesReducer = (state = { countries: [] }, action) => {
             break;
     }
 
-    return { countries };
+    return countries;
 };
 
 export default countriesReducer;
