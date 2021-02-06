@@ -1,6 +1,55 @@
+.dropdown-wrapper {
+    margin-top: 20vh;
+    margin-left: 40%;
+}
+.ui.dropdown .menu {
+    max-height: 16rem;
+    overflow-y: scroll;
+    width: 240px;
+    min-width: none;
+    /* hide scrollbar */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.ui.dropdown .menu::-webkit-scrollbar {
+    display: none;
+}
+
+.ui.dropdown .menu > .item:hover {
+    background-color: #fbfafa;
+    color: #4134ff;
+}
+
+.ui.dropdown .menu > .item.selected {
+    background-color: #f1f4ff;
+    color: #4134ff;
+}
 .ui.dropdown .menu > .item > .image,
-.ui.dropdown .menu > .item > img {
+.ui.dropdown .menu > .item > img,
+.ui.rounded.image {
     width: 1.5em;
     height: 1em;
     vertical-align: middle;
+}
+
+/************ Dropdown trigger *****************/
+.ui.icon.input > input {
+    min-width: 240px;
+}
+
+.ui.icon.input.selected > input {
+    padding-left: 47px;
+}
+
+.ui.icon.input > input:focus {
+    border-color: #3d32f0;
+    border-width: 2px;
+}
+.input-image {
+    position: absolute;
+    top: 27px;
+    left: 13px;
+    z-index: 2;
 }
