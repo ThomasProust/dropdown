@@ -17,7 +17,8 @@ const DropdownList = ({
                       image={{ src: c.flag, rounded: true }}
                       text={c.name}
                       key={c.code + String(i)}
-                      onClick={() => {
+                      onClick={(e) => {
+                          e.preventDefault();
                           setDisplayIndex(NB_OF_ITEMS_DISPLAY);
                           setSearch(c.name);
                           setSelected(c);

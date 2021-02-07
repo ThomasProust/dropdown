@@ -9,10 +9,6 @@ const DropdownTrigger = ({ filter, setFilter, selected, setSelected }) => {
         setSelected(null);
     };
 
-    const handleOnClick = () => {
-        setFilter('');
-    };
-
     return (
         <div className="input-wrapper">
             {selected && selected.flag && (
@@ -29,7 +25,6 @@ const DropdownTrigger = ({ filter, setFilter, selected, setSelected }) => {
                 value={selected ? selected.name : filter}
                 onChange={handleOnChange}
                 icon="chevron down"
-                onClick={handleOnClick}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
             />

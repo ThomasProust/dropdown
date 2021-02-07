@@ -13,6 +13,7 @@ const MyDropdown = ({ data }) => {
     const [displayIndex, setDisplayIndex] = useState(NB_OF_ITEMS_DISPLAY);
 
     const handleOnScroll = (e) => {
+        e.preventDefault();
         if (isScrollBottomReached(e.target)) {
             setDisplayIndex(displayIndex + NB_OF_ITEMS_DISPLAY);
         }
@@ -31,7 +32,7 @@ const MyDropdown = ({ data }) => {
             icon={null}
         >
             <Dropdown.Menu
-                onScroll={handleOnScroll}
+                onScroll={(e) => handleOnScroll(e)}
                 onClose={() => setDisplayIndex(NB_OF_ITEMS_DISPLAY)}
             >
                 <DropdownList
