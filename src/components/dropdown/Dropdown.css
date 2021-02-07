@@ -1,7 +1,5 @@
-.dropdown-wrapper {
-    margin-top: 20vh;
-    margin-left: 40%;
-}
+/************ Dropdown list *****************/
+
 .ui.dropdown .menu {
     max-height: 16rem;
     overflow-y: scroll;
@@ -40,6 +38,10 @@
 }
 
 /************ Dropdown trigger *****************/
+.input-wrapper {
+    position: relative;
+}
+
 .ui.icon.input > input {
     min-width: 240px;
 }
@@ -53,8 +55,8 @@
     border-width: 2px;
 }
 .input-image {
-    position: absolute;
-    top: 27px;
+    position: absolute !important;
+    top: 13px;
     left: 13px;
     z-index: 2;
 }

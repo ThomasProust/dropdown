@@ -4,15 +4,15 @@ import { getListAction } from '../actions';
 
 const useDropdownList = (data) => {
     const [search, setSearch] = useState('');
-    const { list } = useSelector((state) => state.dropdown);
+    const list = useSelector((state) => state.dropdownList);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!data) {
-            return;
+        if (data) {
+            dispatch(getListAction(data, search));
         }
-        dispatch(getListAction(data, search));
-    }, [data, search, dispatch]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [data.length, search, dispatch]);
 
     return { list, search, setSearch };
 };

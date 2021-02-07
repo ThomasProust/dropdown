@@ -4,13 +4,9 @@ import './index.css';
 import 'semantic-ui-css/semantic.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import reduxThunk from 'redux-thunk';
-import reducers from './reducers';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk)));
+import { store } from './store';
 
 ReactDOM.render(
     <Provider store={store}>

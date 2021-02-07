@@ -1,8 +1,6 @@
 import { GET_LIST } from '../actions/types';
 
-const dropdownListReducer = (state = { selected: null, list: [] }, action) => {
-    let { list } = state;
-
+const dropdownListReducer = (list = [], action) => {
     switch (action.type) {
         case GET_LIST:
             list = action.payload;
@@ -11,7 +9,7 @@ const dropdownListReducer = (state = { selected: null, list: [] }, action) => {
             break;
     }
 
-    return { ...state, list };
+    return list;
 };
 
 export default dropdownListReducer;

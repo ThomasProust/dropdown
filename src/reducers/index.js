@@ -4,5 +4,5 @@ import dropdownListReducer from './dropdownListReducer';
 
 export default combineReducers({
     countries: countriesReducer,
-    dropdown: dropdownListReducer,
+    dropdownList: dropdownListReducer,
 });

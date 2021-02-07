@@ -3,6 +3,7 @@ import { Input } from 'semantic-ui-react';
 
 const DropdownTrigger = ({ filter, setFilter, selected, setSelected }) => {
     const [isFocused, setIsFocused] = useState(false);
+
     const handleOnChange = (_, data) => {
         setFilter(data.value);
         setSelected(null);
