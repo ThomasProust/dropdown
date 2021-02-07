@@ -10,7 +10,7 @@ const useCountries = () => {
         dispatch(getCountriesAction());
     }, [dispatch]);
 
-    return [countries];
+    return { countries };
 };
 
 export default useCountries;

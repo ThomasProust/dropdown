@@ -17,6 +17,11 @@
     display: none;
 }
 
+.ui.dropdown .menu > .item {
+    max-width: 240px;
+    white-space: normal;
+}
+
 .ui.dropdown .menu > .item:hover {
     background-color: #fbfafa;
     color: #4134ff;

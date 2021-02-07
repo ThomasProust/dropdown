@@ -1,9 +1,14 @@
-import { useState } from 'react';
 import { Dropdown } from 'semantic-ui-react';
+import { NB_OF_ITEMS_DISPLAY } from '../../utils/constants';
 
-const DropdownList = ({ filteredList, selected, setSelected, setSearch }) => {
-    const [displayIndex, setDisplayIndex] = useState(10);
-
+const DropdownList = ({
+    displayIndex,
+    filteredList,
+    selected,
+    setSelected,
+    setSearch,
+    setDisplayIndex,
+}) => {
     return filteredList.length
         ? filteredList.slice(0, displayIndex).map((c) => (
               <Dropdown.Item
@@ -12,9 +17,9 @@ const DropdownList = ({ filteredList, selected, setSelected, setSearch }) => {
                   text={c.name}
                   key={c.name}
                   onClick={() => {
+                      setDisplayIndex(NB_OF_ITEMS_DISPLAY);
                       setSearch(c.name);
                       setSelected(c);
-                      setDisplayIndex(10);
                   }}
               />
           ))

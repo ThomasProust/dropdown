@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getListAction } from '../actions';
-import useCountries from './useCountries';
 
-const useDropdownList = () => {
+const useDropdownList = (data) => {
     const [search, setSearch] = useState('');
-    const [countries] = useCountries();
     const { list } = useSelector((state) => state.dropdown);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!countries) {
+        if (!data) {
             return;
         }
-        dispatch(getListAction(countries, search));
-    }, [countries, search, dispatch]);
+        dispatch(getListAction(data, search));
+    }, [data, search, dispatch]);
 
     return { list, search, setSearch };
 };

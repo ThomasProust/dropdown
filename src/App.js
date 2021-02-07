@@ -1,10 +1,13 @@
 import { Container } from 'semantic-ui-react';
-import MyDropdown from './components/dropdown/Dropdown';
+import Dropdown from './components/dropdown';
+import useCountries from './hooks/useCountries';
 
 const App = () => {
+    const { countries } = useCountries();
+
     return (
         <Container>
-            <MyDropdown />
+            <Dropdown data={countries} />
         </Container>
     );
 };
