@@ -39,7 +39,6 @@ const MyDropdown = ({ data }) => {
                     displayIndex={displayIndex}
                     setDisplayIndex={setDisplayIndex}
                     filteredList={list}
-                    setSearch={setSearch}
                     selected={selected}
                     setSelected={setSelected}
                 />
