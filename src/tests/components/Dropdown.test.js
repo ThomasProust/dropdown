@@ -71,6 +71,34 @@ describe('Dropdown', () => {
             );
         });
 
+        it('display a `result not found` when data is not an array', () => {
+            const { container } = render(
+                <Provider store={store}>
+                    <Dropdown data={{ mwhahaha: 'IamNotAnArray' }} />
+                </Provider>
+            );
+            const list = container.getElementsByClassName('item');
+
+            expect(list.length).toEqual(1);
+            expect(list[0].getElementsByClassName('text')[0].innerHTML).toEqual(
+                'No result found...'
+            );
+        });
+
+        it('display a `result not found` when data is null', () => {
+            const { container } = render(
+                <Provider store={store}>
+                    <Dropdown data={null} />
+                </Provider>
+            );
+            const list = container.getElementsByClassName('item');
+
+            expect(list.length).toEqual(1);
+            expect(list[0].getElementsByClassName('text')[0].innerHTML).toEqual(
+                'No result found...'
+            );
+        });
+
         it('display the options in the menu', () => {
             const countries = mockCountriesFactory(5);
 
